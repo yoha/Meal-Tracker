@@ -15,12 +15,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     @IBOutlet weak var mealLabel: UILabel!
     @IBOutlet weak var mealNameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     // MARK: - Actions
     
-    @IBAction func setDefaultMealName(sender: UIButton) {
-        mealLabel.text = "Spaghtetti"
-    }
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
         mealNameTextField.resignFirstResponder()
         let imagePickerController = UIImagePickerController()

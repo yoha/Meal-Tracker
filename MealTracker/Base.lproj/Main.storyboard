@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="oap-vI-ePr">
-                                <rect key="frame" x="20" y="80" width="560" height="440"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="oap-vI-ePr">
+                                <rect key="frame" x="20" y="80" width="560" height="454"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOR-dC-uQz">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
+                                        <rect key="frame" x="237" y="0.0" width="87" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -32,15 +32,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UD-ZA-cF4">
-                                        <rect key="frame" x="0.0" y="77" width="175" height="30"/>
-                                        <state key="normal" title="Set to Default Meal Name"/>
-                                        <connections>
-                                            <action selector="setDefaultMealName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OQg-eD-e4I"/>
-                                        </connections>
-                                    </button>
                                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="7V6-Ud-6ES">
-                                        <rect key="frame" x="0.0" y="120" width="320" height="320"/>
+                                        <rect key="frame" x="120" y="77" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7V6-Ud-6ES" secondAttribute="height" multiplier="1:1" id="JFg-Gf-5dx"/>
@@ -49,6 +42,10 @@
                                             <outletCollection property="gestureRecognizers" destination="mf2-Ik-Boc" appends="YES" id="fMy-nX-FeC"/>
                                         </connections>
                                     </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Euh-iF-E0B" customClass="RatingControl" customModule="MealTracker" customModuleProvider="target">
+                                        <rect key="frame" x="160" y="410" width="240" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="Drb-KW-9kb" secondAttribute="trailing" id="98f-IA-Xhb"/>
@@ -67,6 +64,7 @@
                         <outlet property="mealLabel" destination="IOR-dC-uQz" id="oo2-I8-ETH"/>
                         <outlet property="mealNameTextField" destination="Drb-KW-9kb" id="GgS-NT-TxC"/>
                         <outlet property="photoImageView" destination="7V6-Ud-6ES" id="siF-Bc-NDt"/>
+                        <outlet property="ratingControl" destination="Euh-iF-E0B" id="fGt-R2-cck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,6 +74,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="446" y="685"/>
         </scene>
     </scenes>
     <resources>
