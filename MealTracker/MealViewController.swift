@@ -15,6 +15,20 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     @IBOutlet weak var mealNameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var saveMealBarButton: UIBarButtonItem!
+    
+    var meal: Meal?
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveMealBarButton === sender {
+            let mealName = mealNameTextField.text ?? ""
+            let mealPhoto = photoImageView.image
+            let mealRating = ratingControl.selectedRating
+            meal = Meal(mealName: mealName, mealPhoto: mealPhoto, mealRating: mealRating)
+        }
+    }
     
     // MARK: - Actions
     
@@ -26,6 +40,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
+    @IBAction func cancelNewMeal(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -33,7 +51,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         return true
     }
     
+    func checkIsMealNameValid() {
+        let isMealNameValid = mealNameTextField.text ?? ""
+        saveMealBarButton.enabled = !isMealNameValid.isEmpty
+    }
+    
     func textFieldDidEndEditing(textField: UITextField) {
+        checkIsMealNameValid()
+        navigationItem.title = mealNameTextField.text
     }
     
     // MARK: - UIImagePickerControllerDelegate
@@ -53,6 +78,8 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         
         // Identify this view controller as its delegate
         mealNameTextField.delegate = self
+        
+        saveMealBarButton.enabled = false
     }
 
 }
