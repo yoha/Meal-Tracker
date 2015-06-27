@@ -12,7 +12,6 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     // MARK: - Properties
     
-    @IBOutlet weak var mealLabel: UILabel!
     @IBOutlet weak var mealNameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
@@ -35,7 +34,6 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        mealLabel.text = mealNameTextField.text
     }
     
     // MARK: - UIImagePickerControllerDelegate

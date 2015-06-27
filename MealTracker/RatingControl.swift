@@ -16,7 +16,7 @@ class RatingControl: UIView {
     let ratingIndex = 5
     var selectedRating = 0 {
         didSet {
-            // setNeedsLayout() // App still works when commented.
+             setNeedsLayout()
         }
     }
     
@@ -48,7 +48,7 @@ class RatingControl: UIView {
             ratingButtonFrame.origin.x = CGFloat(index * (ratingButtonSize + marginBetweenButtons))
             button.frame = ratingButtonFrame
         }
-        // updateRatingButtonSelectionState() // App still works when commented
+         updateRatingButtonSelectionState()
     }
     
     // MARK: - Actions
