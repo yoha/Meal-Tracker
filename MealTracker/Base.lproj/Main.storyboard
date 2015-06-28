@@ -62,7 +62,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="o3t-Um-d9C">
                             <connections>
-                                <segue destination="2fG-pa-SzD" kind="unwind" unwindAction="unwindToYourMealList:" id="M25-2f-5x2"/>
+                                <segue destination="2fG-pa-SzD" kind="unwind" identifier="saveMeal" unwindAction="unwindToYourMealList:" id="M25-2f-5x2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -118,6 +118,7 @@
                                     <outlet property="mealImageView" destination="jkk-DH-g05" id="VuI-LB-Cpz"/>
                                     <outlet property="mealNameLabel" destination="EUn-cw-KkM" id="fNS-MJ-HrY"/>
                                     <outlet property="mealRatingControl" destination="Pr7-in-qV3" id="ZIT-fI-3o1"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showMeal" id="QgA-ti-CkE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -172,10 +173,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCE-gV-e6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="686"/>
+            <point key="canvasLocation" x="1658" y="1196"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QgA-ti-CkE"/>
+    </inferredMetricsTieBreakers>
 </document>

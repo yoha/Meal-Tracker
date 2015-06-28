@@ -32,7 +32,7 @@ class RatingControl: UIView {
             let ratingButton = UIButton()
             ratingButton.setImage(emptyStarImage, forState: .Normal)
             ratingButton.setImage(filledStarImage, forState: .Selected)
-            ratingButton.setImage(filledStarImage, forState: [.Selected, .Highlighted])
+            ratingButton.setImage(filledStarImage, forState: [.Highlighted, .Selected])
             ratingButton.adjustsImageWhenHighlighted = false
             ratingButton.addTarget(self, action: "ratingButtonTapped:", forControlEvents: .TouchDown)
             ratingButtons += [ratingButton]

@@ -46,6 +46,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     // MARK: - UITextFieldDelegate
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        saveMealBarButton.enabled = false
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         mealNameTextField.resignFirstResponder()
         return true
@@ -79,7 +83,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         // Identify this view controller as its delegate
         mealNameTextField.delegate = self
         
-        saveMealBarButton.enabled = false
+        if let meal = meal {
+            navigationItem.title = meal.mealName
+            mealNameTextField.text = meal.mealName
+            photoImageView.image = meal.mealPhoto
+            ratingControl.selectedRating = meal.mealRating
+        }
+        
+        checkIsMealNameValid()
     }
 
 }
