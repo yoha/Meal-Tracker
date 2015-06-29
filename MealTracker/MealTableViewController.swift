@@ -16,8 +16,13 @@ class MealTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        showSampleMeals()
         navigationItem.leftBarButtonItem = editButtonItem()
+        if let arrayOfMeals = loadMeals() {
+            meals += arrayOfMeals
+        }
+        else {
+            showSampleMeals()
+        }
     }
     
     func showSampleMeals() {
@@ -61,6 +66,7 @@ class MealTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             meals.removeAtIndex(indexPath.row)
+            saveMeals()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -108,6 +114,17 @@ class MealTableViewController: UITableViewController {
                 tableView.insertRowsAtIndexPaths([newMealLocationInTheTableView], withRowAnimation: .Bottom)
             }
         }
+        saveMeals()
     }
-
+    
+    // MARK: - NSCoding
+    
+    func saveMeals() {
+        let isSuccessfulMealSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.archiveURL.path!)
+        if !isSuccessfulMealSave { print("failure in saving meal...") }
+    }
+    
+    func loadMeals() -> [Meal]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Meal.archiveURL.path!) as? [Meal]
+    }
 }
