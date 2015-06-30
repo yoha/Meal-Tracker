@@ -41,7 +41,12 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     }
     
     @IBAction func cancelNewMeal(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        if presentingViewController is UINavigationController {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     
     // MARK: - UITextFieldDelegate
