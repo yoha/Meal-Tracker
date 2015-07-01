@@ -12,6 +12,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     // MARK: - Properties
     
+    
     @IBOutlet weak var mealNameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
@@ -60,10 +61,6 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         return true
     }
     
-    func checkIsMealNameValid() {
-        let isMealNameValid = mealNameTextField.text ?? ""
-        saveMealBarButton.enabled = !isMealNameValid.isEmpty
-    }
     
     func textFieldDidEndEditing(textField: UITextField) {
         checkIsMealNameValid()
@@ -82,6 +79,8 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - Misc. methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +96,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         
         checkIsMealNameValid()
     }
-
+    
+    func checkIsMealNameValid() {
+        let isMealNameValid = mealNameTextField.text ?? ""
+        saveMealBarButton.enabled = !isMealNameValid.isEmpty
+    }
 }
 

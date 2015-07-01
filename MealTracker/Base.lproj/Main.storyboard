@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sU6-w1-VjX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sU6-w1-VjX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="oap-vI-ePr">
                                 <rect key="frame" x="20" y="80" width="560" height="420"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Drb-KW-9kb">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Cuisine Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Drb-KW-9kb">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -67,7 +67,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mealNameTextField" destination="Drb-KW-9kb" id="GgS-NT-TxC"/>
+                        <outlet property="mealNameTextField" destination="Drb-KW-9kb" id="YBc-OV-TAD"/>
                         <outlet property="photoImageView" destination="7V6-Ud-6ES" id="siF-Bc-NDt"/>
                         <outlet property="ratingControl" destination="Euh-iF-E0B" id="fGt-R2-cck"/>
                         <outlet property="saveMealBarButton" destination="o3t-Um-d9C" id="eCD-QF-XLJ"/>
