@@ -12,7 +12,6 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     // MARK: - Properties
     
-    
     @IBOutlet weak var mealNameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
